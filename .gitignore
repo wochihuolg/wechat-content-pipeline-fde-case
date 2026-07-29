@@ -1,0 +1,9 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+*.tmp
+output/
+image_generation_manifest.json
+公众号贴图草稿结果.json
+公众号永久素材缓存.json
