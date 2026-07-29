@@ -1,12 +1,17 @@
 ---
 name: wechat-content-pipeline
-description: "Turn PDF, Markdown, or text source material into a reviewable WeChat Official Account native image-post pipeline: plan non-duplicative topics, write independently rewritten articles and six-image sticker prompts, generate the images through APIMart, save resumable official newspic drafts, and audit the batch. Use for 公众号选题、公众号贴图、六图内容、批量生图、公众号草稿、内容流水线、FDE workflow demonstrations, or when Codex must reproduce the source-to-draft process without browser automation."
+description: "Turn PDF, Markdown, or text source material into a reviewable WeChat Official Account native image-post pipeline: plan non-duplicative topics with source traceability, independently rewrite articles and six-image prompts, generate images through APIMart, save resumable official newspic drafts, and audit the batch. Use for 公众号选题、公众号贴图、六图内容、批量生图、公众号草稿、知识资料内容化、内容流水线, or when Codex must reproduce a source-to-draft workflow without fragile browser automation."
 ---
 
 # WeChat Content Pipeline
 
 Build a human-reviewed path from source material to native six-image WeChat
 drafts. Keep every stage resumable and observable.
+
+Use the scripts for deterministic execution and keep editorial decisions at
+the explicit review gates. The expected flow is source to topic plan, article
+and six-image contract, image manifest, official newspic draft manifest, saved
+drafts, then audit.
 
 ## Protect the boundary
 
