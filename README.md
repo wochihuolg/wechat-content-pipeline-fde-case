@@ -6,6 +6,11 @@
 
 > 安全边界：本项目中的“发布”只指保存为公众号原生 newspic 草稿。项目不提供正式发表、群发或 freepublish 能力。
 
+## 包含的 Skills
+
+- `wechat-content-pipeline`：通用的来源到公众号六图草稿流水线；
+- `wechat-white-minimal-article`：中文显示名“公众号白底极简风格公众号文章”，专门创作“每天介绍一个 AI 产品：{产品名}”栏目文章，固定白底极简六图，并校验后台完整标题不得缩写。
+
 ## 适合解决什么问题
 
 - 从长 PDF 或知识资料中规划一批不重复的公众号选题；
@@ -112,6 +117,12 @@
     │   ├── agents/openai.yaml
     │   ├── references/
     │   └── scripts/
+    ├── skill/wechat-white-minimal-article/
+    │   ├── SKILL.md
+    │   ├── agents/openai.yaml
+    │   ├── assets/公众号文章模板.md
+    │   ├── references/
+    │   └── scripts/
     ├── examples/source.md
     ├── tests/test_pipeline.py
     ├── 本地使用说明.md
@@ -132,6 +143,7 @@
     python -m pip install -r requirements.txt
     Copy-Item .env.example .env
     .\install-local.ps1
+    .\install-local.ps1 -SkillName wechat-white-minimal-article
 
 编辑本机 .env，不要把它提交到 Git。
 
@@ -152,6 +164,12 @@
 
     使用 $wechat-content-pipeline，审计 D:\output\guide-batch-01。
     检查每篇是否六图、草稿标识是否唯一，并确认 published 为 0。
+
+    使用 $wechat-white-minimal-article，把 D:\资料\ai-products.md 写成 10 篇白底极简 AI 产品拆解。
+    后台标题必须完整使用“每天介绍一个 AI 产品：{产品名}”，先生成文章和六图指令，不要生图。
+
+    使用 $wechat-white-minimal-article，检查并原位修正 D:\output\ai-products 中已有公众号草稿的错误短标题。
+    保留原 MediaID，使用 draft/update 修正并逐篇回查，不要创建重复草稿。
 
 Codex 应在选题审核、付费生图和公众号写入这三个节点明确停下来。用户只授权前一阶段时，不应自动进入后一阶段。
 
@@ -248,4 +266,4 @@ Codex 应在选题审核、付费生图和公众号写入这三个节点明确�
 
     python -m unittest discover -s tests -v
 
-当前测试覆盖资料按标题切片、选题去重、六图契约和完整批次审计。
+当前测试覆盖资料按标题切片、选题去重、六图契约、完整栏目标题、标题映射阻断和完整批次审计。

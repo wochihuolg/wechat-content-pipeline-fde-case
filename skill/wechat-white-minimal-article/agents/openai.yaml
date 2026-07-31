@@ -1,0 +1,4 @@
+interface:
+  display_name: "公众号白底极简风格公众号文章"
+  short_description: "创作白底极简AI产品公众号文章、六图贴图并保存微信草稿"
+  default_prompt: "使用 $wechat-white-minimal-article 创作一篇白底极简 AI 产品公众号文章，并生成六图贴图与草稿清单。"
